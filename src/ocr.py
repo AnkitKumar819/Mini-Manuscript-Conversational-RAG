@@ -13,11 +13,8 @@ from config import OCR_OUTPUT_DIR
 from utils import create_directory
 
 
-# ======================================
-# INITIALIZE OCR READER
-# ======================================
-
-reader = easyocr.Reader(['en'])
+# Optimized for Indic scripts (Hindi/Sanskrit)
+reader = easyocr.Reader(['hi', 'sa', 'en'])
 
 
 # ======================================

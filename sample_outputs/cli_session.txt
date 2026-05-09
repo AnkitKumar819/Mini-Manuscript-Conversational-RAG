@@ -1,0 +1,19 @@
+==============================
+Mini Manuscript RAG Chat
+==============================
+
+Type 'exit' to quit.
+
+Ask: > What is the primary topic of the manuscript?
+Answer: The manuscript appears to be a philosophical text discussing various aspects of existence and spiritual practices. However, specific details are limited in the provided context.
+Sources: [page_8]
+Tokens Used: 482
+--------------------
+Ask: > Translate the first verse.
+Answer: I could not find a specific verse to translate in the provided context from page 8.
+Sources: [page_8]
+Tokens Used: 450
+--------------------
+Ask: > exit
+
+Goodbye!

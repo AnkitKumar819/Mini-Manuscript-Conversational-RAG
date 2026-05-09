@@ -14,7 +14,7 @@ def start_chat():
 
     while True:
 
-        query = input("Ask Question: ")
+        query = input("Ask: > ")
 
         if query.lower() == "exit":
             print("\nGoodbye!\n")
@@ -22,20 +22,22 @@ def start_chat():
 
         answer, sources, tokens = ask_question(query)
 
-        print("\nAnswer:\n")
+        print(f"Answer: {answer}")
 
-        print(answer)
+        # Format sources as [page_x]
+        formatted_sources = []
+        for s in sources:
+            # Extract page number if present, otherwise use the source string
+            import re
+            match = re.search(r'Page (\d+)', s)
+            if match:
+                formatted_sources.append(f"[page_{match.group(1)}]")
+            else:
+                formatted_sources.append(f"[{s}]")
 
-        print("\nSources:")
-
-        unique_sources = sorted(set(sources))
-
-        for source in unique_sources:
-            print(f"- {source}")
-
-        print(f"\n[Tokens Used: {tokens}]")
-
-        print("\n" + "=" * 40 + "\n")
+        print(f"Sources: {', '.join(sorted(set(formatted_sources)))}")
+        print(f"Tokens Used: {tokens}")
+        print("-" * 20)
 
 
 if __name__ == "__main__":
